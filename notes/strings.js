@@ -3,7 +3,7 @@
 
 abc = 'abc'
 
-// Use regex on a string to see if its alphanumeric
+// Use regex on a string to see if its alphanumeric. /i means case insensitive.
 abc[0].match(/[a-z0-9]/i) // true
 
 // Apply lowercase to a string

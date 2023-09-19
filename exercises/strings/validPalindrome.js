@@ -13,13 +13,13 @@ var isPalindromeV1 = function (s) {
 var isPalindrome = function (s) {
   // Check for palindrome dropping symbols and spaces. Case insensitive.
   // Compare alphanumeric characters only.
-  
+
   // Base case. A string is a palindrome if empty or just one character.
   if (s.length === 0 || s.length === 1) return true;
-  // We're going to use two pointers starting at teh beginning and end
+  // We're going to use two pointers starting at the beginning and the end
   // We're going to scan towards the middle while checking for equality
-  // If we find a non alphabetic character we're going to skip it
-  // We're going to use regex to check for alphabetic characters
+  // If we find a non alphanumeric character we're going to skip it
+  // We're going to use regex to check for alphanumeric characters
 
   let left = 0;
   let right = s.length - 1;
