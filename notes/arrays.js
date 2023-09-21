@@ -7,6 +7,8 @@ emptyArr.length === 0; // true
 
 // Adding an element to the front of the array
 arr.unshift(0); // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+// Removing an element from the front of the array
+arr.shift(); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 // Filter out elements that don't match a condition
 arr.filter((num) => num % 2 === 0); // [0, 2, 4, 6, 8]
