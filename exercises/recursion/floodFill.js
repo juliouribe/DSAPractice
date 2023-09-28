@@ -11,35 +11,31 @@
 // Keep going until we hit edges, are surrounded by 0's, or can only hit previously visited cells.
 
 // These are the 4 directions we can move.
-const dir = [
+const dirs = [
   [1, 0],
-  [-1, 0],
   [0, 1],
+  [-1, 0],
   [0, -1]
 ]
+const fill = function(image, sr, sc, targetColor, startColor) {
+  if (sr >= image[0].length || sr < 0 || sc >= image.length || sc < 0) {
+      return image
+  }
 
-const flood = function (image, sr, sc, color, startColor) {
-  // Exit early if we're out of bounds.
-  if (sr < 0 || sr >= image.length || sc < 0 || sc >= image.length) {
-    return;
+  const curr = image[sr][sc];
+  if (curr === startColor && curr !== targetColor) {
+      image[sr][sc] = targetColor;
+      for (dir of dirs) {
+          const [x, y] = dir;
+          fill(image, sr+x, sc+y, targetColor, startColor);
+      }
   }
-  let curr = image[sr][sc];
-  // If current cell has the same start color as when we started infecting, change the color.
-  if (curr === startColor) {
-    image[sr][sc] = color;
-    // call floodFill on adjacent using loop
-    for (let i = 0; i < dir.length; i++) {
-      // Unpack directions and recursively call floodFill
-      const [x, y] = dir[i];
-      flood(image, sr + x, sc + y, color, startColor)
-    }
-  }
+  return image;
 }
 
-var floodFill = function (image, sr, sc, color) {
+
+var floodFill = function(image, sr, sc, color) {
   const startColor = image[sr][sc];
-  // Avoid infinite loop if colors are the same
   if (startColor === color) return image;
-  flood(image, sr, sc, color, startColor)
-  return image
+  return fill(image, sr, sc, color, startColor);
 };
