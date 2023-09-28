@@ -6,9 +6,9 @@ Pre-Order
 - recurse right
 
 In-Order
-- recurse right
-- visit node
 - recurse left
+- visit node
+- recurse right
 
 Post-Order
 - recurse right

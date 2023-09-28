@@ -124,6 +124,5 @@ class Deck {
     } else {
       console.log("House wins!");
     }
-
   }
 }
