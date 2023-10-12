@@ -70,3 +70,63 @@ function kgToLbs(weight: number | string): number {
 
 kgToLbs(10);
 kgToLbs('10kg');
+
+
+// intersection types
+type Draggable = {
+  drag: () => void,
+};
+
+type Resizable = {
+  resize: () => void
+};
+
+// Type that combines the two types above.
+type UIWidget = Draggable & Resizable;
+
+// Initialize an instance of this type by defining both required methods
+let textBox: UIWidget = {
+  drag: () => {},
+  resize: () => {}
+}
+
+// Literal Types
+/*
+If you want to have a variable only be able to be selected from certain values
+In this example we use a type alias to set a literal of 50 or 100. Then we use
+the type alias to create a variable set to 50.
+*/
+type Quantity = 50 | 100;
+let quantity: Quantity = 50;
+
+type Metric = 'cm' | 'inch';
+
+// Nullable Types
+function greet(name: string | null | undefined): void {
+  if (name)
+    console.log(name.toUpperCase());
+  else
+    console.log('Hola!')
+}
+greet(null);  // this will make it crash since we aren't handling null.
+
+// Optional Chaining
+type Customer = {
+  birthday: Date
+}
+
+function getCustomer(id: number): Customer | null {
+  return id === 0 ? null : { birthday: new Date() };
+}
+
+let customer = getCustomer(1)
+// if (customer !== null && customer !== undefined)
+// Optional property access operator
+console.log(customer?.birthday?.getFullYear())
+
+// Optional element access operator
+// customers[0]
+// customers?.[0]
+// Optional call does the same thing but for functions.
+let log: any = (message: string) => console.log(message);
+log?.('a');
