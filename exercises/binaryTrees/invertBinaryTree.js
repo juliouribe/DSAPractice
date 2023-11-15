@@ -16,7 +16,7 @@ var invertTree = function (root) {
   // go down right, swap the children
   // keep going until this.left and this.right are null
   // base case
-  if (root == null) {
+  if (root === null) {
     return root;
   }
 

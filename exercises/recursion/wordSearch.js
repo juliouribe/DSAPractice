@@ -19,6 +19,7 @@ var exist = function (board, word) {
       if (row < 0 || col < 0 || row >= board.length || col >= board[0].length) {
         return;
       }
+      // Not the letter we're looking for.
       if (board[row][col] != word[idx]) return;
       // We found all of the letters in our path.
       if (idx === word.length - 1) {
