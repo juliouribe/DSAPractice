@@ -51,3 +51,23 @@ var isAnagram2 = function (s, t) {
   // return true
   return Object.values(charMap).every(val => val === 0);
 };
+
+
+var isAnagram3 = function(s, t) {
+  const hashCount = {};
+  for (let i = 0; i < s.length; i++) {
+      if (s[i] in hashCount) {
+          hashCount[s[i]]++;
+      } else {
+          hashCount[s[i]] = 1;
+      }
+  }
+  for (let i = 0; i < t.length; i++) {
+      if (t[i] in hashCount) {
+          hashCount[t[i]]--;
+      } else {
+          return false;
+      }
+  }
+  return Object.values(hashCount).every(num => num === 0);
+};
