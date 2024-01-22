@@ -51,3 +51,13 @@ console.log(isPalindrome(s)) // false
 
 s = " ";
 console.log(isPalindrome(s)) // true
+
+var isPalindrome2 = function(s) {
+  let clean = ''
+  for (char of s) {
+      if (char.match(/[a-z0-9]/i)) {
+          clean += char.toLowerCase();
+      }
+  }
+  return clean === clean.split('').reverse().join('');
+};
