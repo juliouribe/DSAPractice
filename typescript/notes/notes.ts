@@ -2,6 +2,7 @@ import { ListNode } from "../mergeTwoSortedLists";
 
 // Initialize an empty object with keys and values integer values (technically any number)
 const seen: { [key: number]: number } = {};
+const hash: {[key: string]: number} = {};
 
 // Initialize empty node where node is a class
 const listNode = new ListNode;
