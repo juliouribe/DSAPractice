@@ -38,3 +38,19 @@ var searc2 = function(nums, target) {
         }
     }
 };
+
+var searckWhile = function(nums, target) {
+    let lo = 0;
+    let hi = nums.length;
+    while (lo < hi) {
+        const mid = Math.floor(lo + (hi - lo)/2);
+        if (nums[mid] === target) {
+            return mid;
+        } else if (nums[mid] > target) {
+            hi = mid;
+        } else {
+            lo = mid + 1;
+        }
+    }
+    return -1
+};
