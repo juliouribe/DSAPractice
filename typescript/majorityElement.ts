@@ -16,3 +16,19 @@ function majorityElement(nums: number[]): number {
         }
     }
 };
+
+// function majorityElement(nums: number[]): number {
+//     const n = nums.length;
+//     const half = Math.floor(n / 2);
+
+//     let map = new Map();
+//     for (let num of nums) {
+//         let count = map.get(num) || 0;
+//         map.set(num, count + 1);
+//         if (count + 1 > half) {
+//             return num;
+//         }
+//     }
+
+//     return -1;
+// }

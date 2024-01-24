@@ -13,3 +13,9 @@ type Node<T> = {
     next?: Node<T>,
 }
 const node = { value: 5 } as Node<number>;
+
+// Set up a counter and update counts.
+let map = new Map();
+const num = 1;
+let count = map.get(num) || 0   // return count or 0. First part is undefined if entry doesn't exist.
+map.set(num, count + 1);        // increment the count;
