@@ -8,21 +8,17 @@ function backspaceCompare(s: string, t: string): boolean {
     let sStack: string[] = [];
     let tStack: string[] = [];
     for (let char of s) {
-        if (char === '#') {
-            if (sStack.length > 0) {
-                sStack.pop();
-            }
-        } else {
+        if (char !== '#') {
             sStack.push(char);
+        } else if (sStack.length > 0) {
+            sStack.pop()
         }
     }
     for (let char of t) {
-        if (char === '#') {
-            if (tStack.length > 0) {
-                tStack.pop();
-            }
-        } else {
+        if (char !== '#') {
             tStack.push(char);
+        } else if (tStack.length > 0) {
+            tStack.pop()
         }
     }
     return sStack.join('') === tStack.join('');
