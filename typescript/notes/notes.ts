@@ -31,3 +31,8 @@ const num = 1;
 let count = map.get(num) || 0   // return count or 0. First part is undefined if entry doesn't exist.
 map.set(num, count + 1);        // increment the count;
 
+// Initialize and empty m x n array with undefined.
+let m = 3;
+let n = 2;
+const empty2DArray: boolean[][] = Array.from(new Array(m), () => new Array(n).fill(false));
+
