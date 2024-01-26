@@ -31,7 +31,7 @@ function shortestPathBinaryMatrix(grid: number[][]): number {
     // 2. Pop current node from front of queue
     while (queue.length > 0) {
         // 3. Process current node
-        let curr = queue.shift();
+        let curr = queue.shift() as layer<number>;
         let row = curr.row;
         let col = curr.col;
         let level = curr.level;

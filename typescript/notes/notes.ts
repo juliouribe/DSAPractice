@@ -4,6 +4,17 @@ import { ListNode } from "../mergeTwoSortedLists";
 const seen: { [key: number]: number } = {};
 const hash: {[key: string]: number} = {};
 
+// Initialize an empty hash like object using an interface
+interface Pair<K, V> {
+    key: K;
+    value: V;
+}
+// K and V can be any type so you can also do number, number or string, string
+let month: Pair<string, number> = {
+    key: 'Jan',
+    value: 1,
+};
+
 // Initialize empty node where node is a class
 const listNode = new ListNode;
 
@@ -19,3 +30,4 @@ let map = new Map();
 const num = 1;
 let count = map.get(num) || 0   // return count or 0. First part is undefined if entry doesn't exist.
 map.set(num, count + 1);        // increment the count;
+
