@@ -58,4 +58,17 @@ Other Notes
 - we won't run the code. Think about how you would test your code.
 - focus on solving problems. Spitting out a class is most likely not the focus.
 
+
+More tips
+- keep your intro short
+- repeat the question back to your interviewer before proceeding. Run through a
+couple of sample inputs and expected outputs.
+- It's okay to ask for a hint if you are stuck. Time is scarce
+- ask for permission to use a built in function or data structure.
+- you will not run any code but are expected to be able to walk through your code
+step by step
+- consider edge cases and ways to improve your code towards the end.
+- also be sure to mention time and space complexity
+
+
 */
