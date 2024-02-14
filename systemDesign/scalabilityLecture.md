@@ -162,3 +162,32 @@ If you have firewall capabilities, then apply it to the switch and lock things
 down to only these options. The reason you'd want to do this is because there's
 no need for anything else. Apply the principle of least privilege. Don't "leave
 the door open" for folks to take advantage of something.
+
+
+## Review
+vertical scaling: increasing the capacity of a given machine by upgrading the
+hardware so it can handle more requests.
+
+horizontal scaling: increasing the capacity of a system by adding more machines.
+This can be cheaper and faster at times since the cloud can make this almost
+unlimited for you.
+
+caching: keeping things in some sort of memory so it's faster to fetch on repeated
+requests. For example, mysql can cache the result of queries. There's memcache
+which stores data in RAM for faster retrieval. You can also apply some LRU cache
+where you keep the most recently used requests.
+
+load balancing: the process of handling and distributing multiple requests to
+either servers or databases. You can do round robin for a simple approach but
+risk one server being overrun by potentially more heavy requests or its simply
+a worse machine. You can split up servers to handle subsets of users based of
+something. Similar with databases and this is called partitioning. A common example
+is breaking up user records by last names.
+
+Database replication: it's good to have multiple DBs so you have backups if one
+crashed or fails. A common setup is having a primary-primary setup where you have
+two DBs that handle writes and share data while the replicas are used for reads.
+They get occasional copies from the primaries and don't process writes.
+
+Database partitioning: break up your records based on some sort of category. For
+example, you can store certain last names in one database and the rest in another.
