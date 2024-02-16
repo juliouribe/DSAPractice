@@ -36,3 +36,7 @@ let m = 3;
 let n = 2;
 const empty2DArray: boolean[][] = Array.from(new Array(m), () => new Array(n).fill(false));
 
+// In an object, the keys are always strings if numbers are passed in.
+// In a set, keys can be strings or integers. If you are comparing values from a
+// set to keys from an object, always convert the int to string in a set to avoid confusion
+
