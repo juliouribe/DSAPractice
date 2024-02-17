@@ -1,3 +1,13 @@
+const createGraph = (edges) => {
+    const graph = {};
+    for (const [a, b] of edges) {
+        if (!(a in graph)) graph[a] = [];
+        if (!(b in graph)) graph[b] = [];
+        graph[a].push(b);
+    }
+    return graph;
+}
+
 const getCounts = (graph) => {
     const counts = {};
     for (const node in graph) {
@@ -11,18 +21,20 @@ const getCounts = (graph) => {
     return counts;
 }
 
-const topologicalOrder = (graph) => {
-    const rez = [];
+const safeCracking = (hints) => {
+    const code = [];
+    const graph = createGraph(hints);
     const counts = getCounts(graph);
     const queue = [];
-    // Start a queue with nodes with no dependencies.
-    for (const node in counts) {
-        if (counts[node] === 0) queue.push(node);
+    for (const node in graph) {
+        if (counts[node] === 0) {
+            queue.push(node);
+        }
     }
-    // Iterate over queue, deduct deps of neighbors, and add new 0 deps nodes.
+
     while (queue.length) {
         const curr = queue.shift();
-        rez.push(curr);
+        code.push(curr);
         for (const neighbor of graph[curr]) {
             counts[neighbor]--;
             if (counts[neighbor] === 0) {
@@ -30,9 +42,9 @@ const topologicalOrder = (graph) => {
             }
         }
     }
-    return rez;
+    return code.join('');
 };
 
 module.exports = {
-    topologicalOrder,
+    safeCracking,
 };
