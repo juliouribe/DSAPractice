@@ -7,8 +7,8 @@ https://web.archive.org/web/20220602114024/https://www.lecloud.net/post/79947513
 
 2. Perhaps we walk through a system design of Metadata DB?
 
-
-
+3. Do you define helper functions within functions or define them outside and
+call them when you need them?
 
 
 
