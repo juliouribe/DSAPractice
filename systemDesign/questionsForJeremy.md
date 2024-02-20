@@ -10,7 +10,7 @@ https://web.archive.org/web/20220602114024/https://www.lecloud.net/post/79947513
 3. Do you define helper functions within functions or define them outside and
 call them when you need them?
 
-
+4. We used Redis and RabbitMQ at Ike and Nuro. How did we use them?
 
 
 Unclear
