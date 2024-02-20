@@ -44,3 +44,12 @@ more. Weighting can be configured within DNS records.
 IP hash: Combines incoming traffic's source and destination IP addresses and
 uses a mathematical function to convert it into a hash. Based on the hash, the
 connection is assigned to a specific server.
+
+## Reverse Proxy
+
+Acts as a buffer between a web server and a client. Can block certain IPs and hide
+information related to the private servers. Lets you still use private IPs and
+have a single public IP. The value of a reverse proxy is available with a single
+server. Only downsides are that they add complexity to the system and are a single
+point of failure on their own.
+
