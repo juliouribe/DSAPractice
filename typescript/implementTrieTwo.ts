@@ -18,7 +18,7 @@ class TrieTwo {
     }
 
     insert(word: string): void {
-        let current: TrieNodeTwo = this.head;
+        let current = this.head;
         const wordClean = word.toLowerCase();
         for (let i = 0; i < word.length; i++) {
             const letter = wordClean[i];

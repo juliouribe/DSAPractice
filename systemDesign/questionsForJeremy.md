@@ -1,4 +1,12 @@
 # Questions for Jeremy
+
+Meeting Notes:
+- try to recreate Ike Machine. Setup some functional and non-functional requirements
+- collaborative so not quite a mock interview
+- we can try to remember as much and perhaps tweak things if Jeremy would have
+done something different
+- Focus on log upload, scenedb, and log management (storage) if we have time.
+
 1. I was reading a blog where they recommended to denormalize a database at the
 start and use NOSQL to remove all joins from the DB. Joins logic will be done in
 the application code. I thought relational databases were great. With sharding,
@@ -32,3 +40,12 @@ for very easy horizontal scaling. How did Docker/cloud becoming popular change
 system design? What are pitfalls that folks can fall into for relying too much
 on the cloud? Costs and complexity but maybe some specific examples.
 
+7. Seems like the first component a user's request interacts with tends to be
+some sort of load balancer, reverse proxy, or gateway. Any tips on how to manage
+a user's session (login creds) while using a load balancer. I've seen examples
+of a session services interfacing with the gateway/load balancer.
+
+8. With multiple load balancers I saw a lecture where they used a switch to manage
+requests across a load balancer. This lecture is 10 years old. Would that still
+be a problem or would a load balancer provider provide some redundancy in load balancers
+that they offer.
